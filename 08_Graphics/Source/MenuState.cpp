@@ -14,17 +14,33 @@ MenuState::MenuState(StateStack& stack, Context context)
 	sf::Texture& texture = context.textures->get(Textures::TitleScreen);
 	mBackgroundSprite.setTexture(texture);
 
-	auto playButton = std::make_shared<GUI::Button>(*context.fonts, *context.textures);
-	playButton->setPosition(100, 300);
-	playButton->setText("Play");
-	playButton->setCallback([this] ()
+	auto playLevelOne = std::make_shared<GUI::Button>(*context.fonts, *context.textures);
+	playLevelOne->setPosition(100, 300);
+	playLevelOne->setText("Play Level 1 (Easy)");
+	playLevelOne->setCallback([this] ()
 	{
 		requestStackPop();
-		requestStackPush(States::Game);
+		requestStackPush(States::EasyGame);
+	});
+
+	auto playLevelTwo = std::make_shared<GUI::Button>(*context.fonts, *context.textures);
+	playLevelTwo->setPosition(100, 350);
+	playLevelTwo->setText("Play Level 2 (Medium)");
+	playLevelTwo->setCallback([this]()
+	{
+		requestStackPush(States::MediumGame);
+	});
+
+	auto playLevelThree = std::make_shared<GUI::Button>(*context.fonts, *context.textures);
+	playLevelThree->setPosition(100, 400);
+	playLevelThree->setText("Play Level 3 (Hard)");
+	playLevelThree->setCallback([this]()
+	{
+		requestStackPush(States::HardGame);
 	});
 
 	auto settingsButton = std::make_shared<GUI::Button>(*context.fonts, *context.textures);
-	settingsButton->setPosition(100, 350);
+	settingsButton->setPosition(100, 450);
 	settingsButton->setText("Settings");
 	settingsButton->setCallback([this] ()
 	{
@@ -32,14 +48,16 @@ MenuState::MenuState(StateStack& stack, Context context)
 	});
 
 	auto exitButton = std::make_shared<GUI::Button>(*context.fonts, *context.textures);
-	exitButton->setPosition(100, 400);
-	exitButton->setText("Exit");
+	exitButton->setPosition(100, 500);
+	exitButton->setText("Exit Game");
 	exitButton->setCallback([this] ()
 	{
 		requestStackPop();
 	});
 
-	mGUIContainer.pack(playButton);
+	mGUIContainer.pack(playLevelOne);
+	mGUIContainer.pack(playLevelTwo);
+	mGUIContainer.pack(playLevelThree);
 	mGUIContainer.pack(settingsButton);
 	mGUIContainer.pack(exitButton);
 }
