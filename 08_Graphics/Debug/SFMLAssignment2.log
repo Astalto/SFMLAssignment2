@@ -1,9 +1,2 @@
-﻿Build started 2016-04-04 8:07:25 PM.
-     1>Project "D:\User\Edisson\Documents\School\College\Multimedia\Assignment 2\SFMLAssignment2\08_Graphics\SFMLAssignment2.vcxproj" on node 2 (Build target(s)).
-     1>Link:
-         SFMLAssignment2.vcxproj -> D:\User\Edisson\Documents\School\College\Multimedia\Assignment 2\SFMLAssignment2\08_Graphics\Debug\SFMLAssignment2.exe
-     1>Done Building Project "D:\User\Edisson\Documents\School\College\Multimedia\Assignment 2\SFMLAssignment2\08_Graphics\SFMLAssignment2.vcxproj" (Build target(s)).
-
-Build succeeded.
-
-Time Elapsed 00:00:00.11
+﻿  MenuState.cpp
+  SFMLAssignment2.vcxproj -> C:\Users\sbailen\Desktop\SFMLAssignment2-master\SFMLAssignment2-master\08_Graphics\Debug\SFMLAssignment2.exe
