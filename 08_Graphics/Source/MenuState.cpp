@@ -28,6 +28,7 @@ MenuState::MenuState(StateStack& stack, Context context)
 	playLevelTwo->setText("Play Level 2 (Medium)");
 	playLevelTwo->setCallback([this]()
 	{
+		requestStackPop();
 		requestStackPush(States::MediumGame);
 	});
 
@@ -36,6 +37,7 @@ MenuState::MenuState(StateStack& stack, Context context)
 	playLevelThree->setText("Play Level 3 (Hard)");
 	playLevelThree->setCallback([this]()
 	{
+		requestStackPop();
 		requestStackPush(States::HardGame);
 	});
 
