@@ -114,6 +114,9 @@
     <ClCompile Include="GameState2.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="World2.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="include\book\ResourceHolder.inl">

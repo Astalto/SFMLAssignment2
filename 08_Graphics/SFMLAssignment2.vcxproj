@@ -133,6 +133,7 @@
     <ClCompile Include="source\TitleState.cpp" />
     <ClCompile Include="source\Utility.cpp" />
     <ClCompile Include="source\World.cpp" />
+    <ClCompile Include="World2.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="include\book\ResourceHolder.inl" />
