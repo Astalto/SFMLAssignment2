@@ -100,6 +100,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="GameState2.cpp" />
     <ClCompile Include="source\Aircraft.cpp" />
     <ClCompile Include="source\Animation.cpp" />
     <ClCompile Include="source\Application.cpp" />
@@ -154,6 +155,7 @@
     <ClInclude Include="include\book\Foreach.hpp" />
     <ClInclude Include="include\book\GameOverState.hpp" />
     <ClInclude Include="include\book\GameState.hpp" />
+    <ClInclude Include="Include\Book\GameState2.hpp" />
     <ClInclude Include="include\book\Label.hpp" />
     <ClInclude Include="include\book\MenuState.hpp" />
     <ClInclude Include="include\book\Particle.hpp" />
@@ -175,6 +177,7 @@
     <ClInclude Include="include\book\TitleState.hpp" />
     <ClInclude Include="include\book\Utility.hpp" />
     <ClInclude Include="include\book\World.hpp" />
+    <ClInclude Include="Include\Book\World2.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
