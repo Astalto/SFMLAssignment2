@@ -98,7 +98,7 @@ bool World2::hasPlayerReachedEnd() const
 void World2::loadTextures()
 {
 	mTextures.load(Textures::Entities, "Media/Textures/Entities.png");
-	mTextures.load(Textures::Jungle, "Media/Textures/Jungle.png");
+	mTextures.load(Textures::Jungle, "Media/Textures/Jungle2.png");
 	mTextures.load(Textures::Explosion, "Media/Textures/Explosion.png");
 	mTextures.load(Textures::Particle, "Media/Textures/Particle.png");
 	mTextures.load(Textures::FinishLine, "Media/Textures/FinishLine.png");
