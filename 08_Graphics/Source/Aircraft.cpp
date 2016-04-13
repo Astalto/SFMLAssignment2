@@ -23,6 +23,7 @@ Aircraft::Aircraft(Type type, const TextureHolder& textures, const FontHolder& f
 , mExplosion(textures.get(Textures::Explosion))
 , mFireCommand()
 , mMissileCommand()
+, mLaserCommand()
 , mFireCountdown(sf::Time::Zero)
 , mIsFiring(false)
 , mIsLaunchingMissile(false)
@@ -158,6 +159,11 @@ void Aircraft::collectMissiles(unsigned int count)
 	mMissileAmmo += count;
 }
 
+void Aircraft::collectLaser(unsigned int count)
+{
+	mLaserAmmo += count;
+}
+
 void Aircraft::fire()
 {
 	// Only ships with fire interval != 0 are able to fire
@@ -171,6 +177,15 @@ void Aircraft::launchMissile()
 	{
 		mIsLaunchingMissile = true;
 		--mMissileAmmo;
+	}
+}
+
+void Aircraft::launchLaser()
+{
+	if (mLaserAmmo > 0)
+	{
+		mIsLaunchingLaser = true;
+		--mLaserAmmo;
 	}
 }
 
@@ -232,6 +247,12 @@ void Aircraft::checkProjectileLaunch(sf::Time dt, CommandQueue& commands)
 	{
 		commands.push(mMissileCommand);
 		mIsLaunchingMissile = false;
+	}
+
+	if (mIsLaunchingLaser)
+	{
+		commands.push(mLaserCommand);
+		mIsLaunchingLaser = false;
 	}
 }
 

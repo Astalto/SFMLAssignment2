@@ -85,6 +85,11 @@ std::vector<ProjectileData> initializeProjectileData()
 	data[Projectile::Missile].texture = Textures::Entities;
 	data[Projectile::Missile].textureRect = sf::IntRect(160, 64, 15, 32);
 
+	data[Projectile::Laser].damage = 999;
+	data[Projectile::Laser].speed = 300.f;
+	data[Projectile::Laser].texture = Textures::Entities;
+	data[Projectile::Laser].textureRect = sf::IntRect(193, 64, 15, 40);
+
 	return data;
 }
 
@@ -107,6 +112,10 @@ std::vector<PickupData> initializePickupData()
 	data[Pickup::FireRate].texture = Textures::Entities;
 	data[Pickup::FireRate].textureRect = sf::IntRect(120, 64, 40, 40);
 	data[Pickup::FireRate].action = std::bind(&Aircraft::increaseFireRate, _1);
+
+	data[Pickup::LaserRefill].texture = Textures::Entities;
+	data[Pickup::LaserRefill].textureRect = sf::IntRect(208, 64, 40, 40);
+	data[Pickup::LaserRefill].action = std::bind(&Aircraft::collectLaser, _1, 1);
 
 	return data;
 }
