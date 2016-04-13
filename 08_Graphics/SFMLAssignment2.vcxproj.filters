@@ -111,10 +111,10 @@
     <ClCompile Include="source\World.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="GameState2.cpp">
+    <ClCompile Include="Source\World2.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="World2.cpp">
+    <ClCompile Include="Source\GameState2.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

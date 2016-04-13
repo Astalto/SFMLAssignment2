@@ -1,2 +1,9 @@
-﻿  MenuState.cpp
-  SFMLAssignment2.vcxproj -> C:\Users\sbailen\Desktop\SFMLAssignment2-master\SFMLAssignment2-master\08_Graphics\Debug\SFMLAssignment2.exe
+﻿Build started 4/13/2016 1:54:31 PM.
+     1>Project "C:\Users\Frank\Documents\GitHub\SFMLAssignment2\08_Graphics\SFMLAssignment2.vcxproj" on node 2 (Build target(s)).
+     1>Link:
+         SFMLAssignment2.vcxproj -> C:\Users\Frank\Documents\GitHub\SFMLAssignment2\08_Graphics\Debug\SFMLAssignment2.exe
+     1>Done Building Project "C:\Users\Frank\Documents\GitHub\SFMLAssignment2\08_Graphics\SFMLAssignment2.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.12
