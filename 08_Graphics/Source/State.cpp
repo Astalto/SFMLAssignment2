@@ -27,7 +27,8 @@ void State::requestStackPush(States::ID stateID)
 
 void State::requestStackPop()
 {
-	mStack->popState();
+	if (!mStack->isEmpty()) // Fail-safe
+		mStack->popState();
 }
 
 void State::requestStateClear()

@@ -3,6 +3,7 @@
 
 #include <Book/State.hpp>
 #include <Book/Container.hpp>
+#include <Book/Player.hpp>
 
 #include <SFML/Graphics/Sprite.hpp>
 #include <SFML/Graphics/Text.hpp>
@@ -21,6 +22,7 @@ class GameOverState : public State
 	private:
 		sf::Text			mGameOverText;
 		sf::Time			mElapsedTime;
+		Player::PrevMission	mPrevMission;
 };
 
 #endif // BOOK_GAMEOVERSTATE_HPP

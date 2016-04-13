@@ -26,6 +26,7 @@ bool GameState::update(sf::Time dt)
 	else if (mWorld.hasPlayerReachedEnd())
 	{
 		mPlayer.setMissionStatus(Player::MissionSuccess);
+		mPlayer.setPrevMission(Player::Mission1);
 		requestStackPush(States::GameOver);
 	}
 

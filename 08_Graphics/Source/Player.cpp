@@ -102,6 +102,16 @@ Player::MissionStatus Player::getMissionStatus() const
 	return mCurrentMissionStatus;
 }
 
+void Player::setPrevMission(PrevMission pMission)
+{
+	mPreviousMission = pMission;
+}
+
+Player::PrevMission Player::getPrevMission() const
+{
+	return mPreviousMission;
+}
+
 void Player::initializeActions()
 {
 	mActionBinding[MoveLeft].action      = derivedAction<Aircraft>(AircraftMover(-1,  0));

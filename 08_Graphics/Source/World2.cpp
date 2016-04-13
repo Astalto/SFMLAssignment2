@@ -130,7 +130,7 @@ void World2::adaptPlayerVelocity()
 	mPlayerAircraft->accelerate(0.f, mScrollSpeed);
 }
 
-bool matchesCategories1(SceneNode::Pair& colliders, Category::Type type1, Category::Type type2)
+bool matchesCategories2(SceneNode::Pair& colliders, Category::Type type1, Category::Type type2)
 {
 	unsigned int category1 = colliders.first->getCategory();
 	unsigned int category2 = colliders.second->getCategory();
@@ -158,7 +158,7 @@ void World2::handleCollisions()
 
 	FOREACH(SceneNode::Pair pair, collisionPairs)
 	{
-		if (matchesCategories1(pair, Category::PlayerAircraft, Category::EnemyAircraft))
+		if (matchesCategories2(pair, Category::PlayerAircraft, Category::EnemyAircraft))
 		{
 			auto& player = static_cast<Aircraft&>(*pair.first);
 			auto& enemy = static_cast<Aircraft&>(*pair.second);
@@ -168,7 +168,7 @@ void World2::handleCollisions()
 			enemy.destroy();
 		}
 
-		else if (matchesCategories1(pair, Category::PlayerAircraft, Category::Pickup))
+		else if (matchesCategories2(pair, Category::PlayerAircraft, Category::Pickup))
 		{
 			auto& player = static_cast<Aircraft&>(*pair.first);
 			auto& pickup = static_cast<Pickup&>(*pair.second);
@@ -178,8 +178,8 @@ void World2::handleCollisions()
 			pickup.destroy();
 		}
 
-		else if (matchesCategories1(pair, Category::EnemyAircraft, Category::AlliedProjectile)
-			|| matchesCategories1(pair, Category::PlayerAircraft, Category::EnemyProjectile))
+		else if (matchesCategories2(pair, Category::EnemyAircraft, Category::AlliedProjectile)
+			|| matchesCategories2(pair, Category::PlayerAircraft, Category::EnemyProjectile))
 		{
 			auto& aircraft = static_cast<Aircraft&>(*pair.first);
 			auto& projectile = static_cast<Projectile&>(*pair.second);
