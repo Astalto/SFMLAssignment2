@@ -1,6 +1,5 @@
 #include <Book/GameOverState.hpp>
 #include <Book/Utility.hpp>
-#include <Book/Player.hpp>
 #include <Book/ResourceHolder.hpp>
 
 #include <SFML/Graphics/RectangleShape.hpp>
@@ -21,6 +20,8 @@ GameOverState::GameOverState(StateStack& stack, Context context)
 		mGameOverText.setString("Mission failed!");	
 	else
 		mGameOverText.setString("Mission successful!");
+
+	mPrevMission = context.player->getPrevMission();
 
 	mGameOverText.setCharacterSize(70);
 	centerOrigin(mGameOverText);
@@ -47,8 +48,20 @@ bool GameOverState::update(sf::Time dt)
 	mElapsedTime += dt;
 	if (mElapsedTime > sf::seconds(3))
 	{
-		requestStateClear();
-		requestStackPush(States::Menu);
+		switch (mPrevMission)
+		{
+		case Player::Mission1:
+			requestStateClear();
+			requestStackPush(States::MediumGame);
+			break;
+		case Player::Mission2:
+			requestStateClear();
+			requestStackPush(States::HardGame);
+			break;
+		default:
+			requestStateClear();
+			requestStackPush(States::Menu);
+		}
 	}
 	return false;
 }

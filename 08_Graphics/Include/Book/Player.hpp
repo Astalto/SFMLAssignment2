@@ -31,6 +31,13 @@ class Player
 			MissionFailure
 		};
 
+		enum PrevMission
+		{
+			Mission1,
+			Mission2,
+			Mission3
+		};
+
 
 	public:
 								Player();
@@ -44,6 +51,9 @@ class Player
 		void 					setMissionStatus(MissionStatus status);
 		MissionStatus 			getMissionStatus() const;
 
+		void					setPrevMission(PrevMission pMission);
+		PrevMission				getPrevMission() const;
+
 	private:
 		void					initializeActions();
 		static bool				isRealtimeAction(Action action);
@@ -53,6 +63,7 @@ class Player
 		std::map<sf::Keyboard::Key, Action>		mKeyBinding;
 		std::map<Action, Command>				mActionBinding;
 		MissionStatus 							mCurrentMissionStatus;
+		PrevMission								mPreviousMission;
 };
 
 #endif // BOOK_PLAYER_HPP

@@ -4,6 +4,8 @@
 #include <Book/StateIdentifiers.hpp>
 #include <Book/TitleState.hpp>
 #include <Book/GameState.hpp>
+#include <Book/GameState2.hpp>
+#include <Book/GameState3.hpp>
 #include <Book/MenuState.hpp>
 #include <Book/PauseState.hpp>
 #include <Book/SettingsState.hpp>
@@ -110,8 +112,8 @@ void Application::registerStates()
 	mStateStack.registerState<TitleState>(States::Title);
 	mStateStack.registerState<MenuState>(States::Menu);
 	mStateStack.registerState<GameState>(States::EasyGame);
-	mStateStack.registerState<GameState>(States::MediumGame);
-	mStateStack.registerState<GameState>(States::HardGame);
+	mStateStack.registerState<GameState2>(States::MediumGame);
+	mStateStack.registerState<GameState3>(States::HardGame);
 	mStateStack.registerState<PauseState>(States::Pause);
 	mStateStack.registerState<SettingsState>(States::Settings);
 	mStateStack.registerState<GameOverState>(States::GameOver);
