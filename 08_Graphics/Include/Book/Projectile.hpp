@@ -15,6 +15,7 @@ class Projectile : public Entity
 			AlliedBullet,
 			EnemyBullet,
 			Missile,
+			Laser,
 			TypeCount
 		};
 

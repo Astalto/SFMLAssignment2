@@ -38,9 +38,11 @@ class Aircraft : public Entity
 		void					increaseFireRate();
 		void					increaseSpread();
 		void					collectMissiles(unsigned int count);
+		void					collectLaser(unsigned int count);
 
 		void 					fire();
 		void					launchMissile();
+		void					launchLaser();
 
 
 	private:
@@ -64,15 +66,18 @@ class Aircraft : public Entity
 		Animation				mExplosion;
 		Command 				mFireCommand;
 		Command					mMissileCommand;
+		Command					mLaserCommand;
 		sf::Time				mFireCountdown;
 		bool 					mIsFiring;
 		bool					mIsLaunchingMissile;
+		bool					mIsLaunchingLaser;
 		bool 					mShowExplosion;
 		bool					mSpawnedPickup;
 
 		int						mFireRateLevel;
 		int						mSpreadLevel;
 		int						mMissileAmmo;
+		int						mLaserAmmo;
 
 		Command 				mDropPickupCommand;
 		float					mTravelledDistance;
