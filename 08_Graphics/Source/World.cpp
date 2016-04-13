@@ -243,32 +243,25 @@ void World::buildScene()
 void World::addEnemies()
 {
 	// Add enemies to the spawn point container
-	addEnemy(Aircraft::Raptor,    0.f,  500.f);
-	addEnemy(Aircraft::Raptor,    0.f, 1000.f);
-	addEnemy(Aircraft::Raptor, +100.f, 1150.f);
-	addEnemy(Aircraft::Raptor, -100.f, 1150.f);
-	addEnemy(Aircraft::Avenger,  70.f, 1500.f);
-	addEnemy(Aircraft::Avenger, -70.f, 1500.f);
-	addEnemy(Aircraft::Avenger, -70.f, 1710.f);
-	addEnemy(Aircraft::Avenger,  70.f, 1700.f);
-	addEnemy(Aircraft::Avenger,  30.f, 1850.f);
-	addEnemy(Aircraft::Raptor,  300.f, 2200.f);
-	addEnemy(Aircraft::Raptor, -300.f, 2200.f);
-	addEnemy(Aircraft::Raptor,    0.f, 2200.f);
-	addEnemy(Aircraft::Raptor,    0.f, 2500.f);
-	addEnemy(Aircraft::Avenger,-300.f, 2700.f);
-	addEnemy(Aircraft::Avenger,-300.f, 2700.f);
-	addEnemy(Aircraft::Raptor,    0.f, 3000.f);
-	addEnemy(Aircraft::Raptor,  250.f, 3250.f);
-	addEnemy(Aircraft::Raptor, -250.f, 3250.f);
-	addEnemy(Aircraft::Avenger,   0.f, 3500.f);
-	addEnemy(Aircraft::Avenger,   0.f, 3700.f);
-	addEnemy(Aircraft::Raptor,    0.f, 3800.f);
-	addEnemy(Aircraft::Avenger,   0.f, 4000.f);
-	addEnemy(Aircraft::Avenger,-200.f, 4200.f);
-	addEnemy(Aircraft::Raptor,  200.f, 4200.f);
-	addEnemy(Aircraft::Raptor,    0.f, 4400.f);
-
+	addEnemy(Aircraft::Hawk, 0.f, 1000.f);
+	addEnemy(Aircraft::Hawk, +100.f, 1150.f);
+	addEnemy(Aircraft::Hawk, -100.f, 1150.f);
+	addEnemy(Aircraft::Sparrow, 70.f, 1500.f);
+	addEnemy(Aircraft::Sparrow, -70.f, 1500.f);
+	addEnemy(Aircraft::Sparrow, 70.f, 1700.f);
+	addEnemy(Aircraft::Hawk, 300.f, 2200.f);
+	addEnemy(Aircraft::Hawk, -300.f, 2200.f);
+	addEnemy(Aircraft::Hawk, 0.f, 2200.f);
+	addEnemy(Aircraft::Hawk, 0.f, 2500.f);
+	addEnemy(Aircraft::Sparrow, -300.f, 2700.f);
+	addEnemy(Aircraft::Sparrow, -300.f, 2700.f);
+	addEnemy(Aircraft::Hawk, 0.f, 3000.f);
+	addEnemy(Aircraft::Hawk, -250.f, 3250.f);
+	addEnemy(Aircraft::Sparrow, 0.f, 3500.f);
+	addEnemy(Aircraft::Sparrow, 0.f, 4000.f);
+	addEnemy(Aircraft::Sparrow, -200.f, 4200.f);
+	addEnemy(Aircraft::Hawk, 200.f, 4200.f);
+	addEnemy(Aircraft::Hawk, 0.f, 4400.f);
 
 	// Sort all enemies according to their y value, such that lower enemies are checked first for spawning
 	std::sort(mEnemySpawnPoints.begin(), mEnemySpawnPoints.end(), [] (SpawnPoint lhs, SpawnPoint rhs)
