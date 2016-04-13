@@ -20,14 +20,36 @@ std::vector<AircraftData> initializeAircraftData()
 	data[Aircraft::Eagle].hasRollAnimation = true;
 
 	data[Aircraft::Raptor].hitpoints = 20;
-	data[Aircraft::Raptor].speed = 80.f;
+	data[Aircraft::Raptor].speed = 90.f;
 	data[Aircraft::Raptor].texture = Textures::Entities;
 	data[Aircraft::Raptor].textureRect = sf::IntRect(144, 0, 84, 64);
 	data[Aircraft::Raptor].directions.push_back(Direction(+45.f, 80.f));
 	data[Aircraft::Raptor].directions.push_back(Direction(-45.f, 160.f));
 	data[Aircraft::Raptor].directions.push_back(Direction(+45.f, 80.f));
-	data[Aircraft::Raptor].fireInterval = sf::Time::Zero;
+	data[Aircraft::Raptor].fireInterval = sf::seconds(4);
 	data[Aircraft::Raptor].hasRollAnimation = false;
+
+	data[Aircraft::Hawk].hitpoints = 10;
+	data[Aircraft::Hawk].speed = 80.f;
+	data[Aircraft::Hawk].texture = Textures::Entities;
+	data[Aircraft::Hawk].textureRect = sf::IntRect(144, 0, 84, 64);
+	data[Aircraft::Hawk].directions.push_back(Direction(+45.f, 80.f));
+	data[Aircraft::Hawk].directions.push_back(Direction(-45.f, 160.f));
+	data[Aircraft::Hawk].directions.push_back(Direction(+45.f, 80.f));
+	data[Aircraft::Hawk].fireInterval = sf::Time::Zero;
+	data[Aircraft::Hawk].hasRollAnimation = false;
+
+	data[Aircraft::Sparrow].hitpoints = 30;
+	data[Aircraft::Sparrow].speed = 50.f;
+	data[Aircraft::Sparrow].texture = Textures::Entities;
+	data[Aircraft::Sparrow].textureRect = sf::IntRect(228, 0, 60, 59);
+	data[Aircraft::Sparrow].directions.push_back(Direction(+45.f, 50.f));
+	data[Aircraft::Sparrow].directions.push_back(Direction(0.f, 50.f));
+	data[Aircraft::Sparrow].directions.push_back(Direction(-45.f, 100.f));
+	data[Aircraft::Sparrow].directions.push_back(Direction(0.f, 50.f));
+	data[Aircraft::Sparrow].directions.push_back(Direction(+45.f, 50.f));
+	data[Aircraft::Sparrow].fireInterval = sf::seconds(5);
+	data[Aircraft::Sparrow].hasRollAnimation = false;
 
 	data[Aircraft::Avenger].hitpoints = 40;
 	data[Aircraft::Avenger].speed = 50.f;
@@ -38,7 +60,7 @@ std::vector<AircraftData> initializeAircraftData()
 	data[Aircraft::Avenger].directions.push_back(Direction(-45.f, 100.f));
 	data[Aircraft::Avenger].directions.push_back(Direction(  0.f,  50.f));
 	data[Aircraft::Avenger].directions.push_back(Direction(+45.f,  50.f));
-	data[Aircraft::Avenger].fireInterval = sf::seconds(2);
+	data[Aircraft::Avenger].fireInterval = sf::seconds(3);
 	data[Aircraft::Avenger].hasRollAnimation = false;
 
 	return data;

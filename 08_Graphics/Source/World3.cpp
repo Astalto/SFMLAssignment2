@@ -244,8 +244,11 @@ void World3::buildScene()
 void World3::addEnemies()
 {
 	// Add enemies to the spawn point container
-	addEnemy(Aircraft::Raptor, 0.f, 500.f);
+	addEnemy(Aircraft::Avenger, 0.f, 500.f);
 	addEnemy(Aircraft::Raptor, 0.f, 1000.f);
+	addEnemy(Aircraft::Raptor, 300.f, 1000.f);
+	addEnemy(Aircraft::Raptor, 10.f, 1000.f);
+	addEnemy(Aircraft::Raptor, -100.f, 1000.f);
 	addEnemy(Aircraft::Raptor, +100.f, 1150.f);
 	addEnemy(Aircraft::Raptor, -100.f, 1150.f);
 	addEnemy(Aircraft::Avenger, 70.f, 1500.f);
@@ -253,7 +256,7 @@ void World3::addEnemies()
 	addEnemy(Aircraft::Avenger, -70.f, 1710.f);
 	addEnemy(Aircraft::Avenger, 70.f, 1700.f);
 	addEnemy(Aircraft::Avenger, 30.f, 1850.f);
-	addEnemy(Aircraft::Raptor, 300.f, 2200.f);
+	addEnemy(Aircraft::Avenger, 300.f, 2200.f);
 	addEnemy(Aircraft::Raptor, -300.f, 2200.f);
 	addEnemy(Aircraft::Raptor, 0.f, 2200.f);
 	addEnemy(Aircraft::Raptor, 0.f, 2500.f);
