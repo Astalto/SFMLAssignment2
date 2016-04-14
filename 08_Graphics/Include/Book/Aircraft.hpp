@@ -84,6 +84,7 @@ class Aircraft : public Entity
 		std::size_t				mDirectionIndex;
 		TextNode*				mHealthDisplay;
 		TextNode*				mMissileDisplay;
+		TextNode*			    mLaserDisplay;
 };
 
 #endif // BOOK_AIRCRAFT_HPP

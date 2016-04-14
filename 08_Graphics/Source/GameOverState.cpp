@@ -52,12 +52,15 @@ bool GameOverState::update(sf::Time dt)
 		{
 		case Player::Mission1:
 			requestStateClear();
-			requestStackPush(States::MediumGame);
+			requestStackPush(States::Menu);
 			break;
 		case Player::Mission2:
 			requestStateClear();
-			requestStackPush(States::HardGame);
+			requestStackPush(States::Menu);
 			break;
+		case Player::Mission3:
+			requestStateClear();
+			requestStackPush(States::Menu);
 		default:
 			requestStateClear();
 			requestStackPush(States::Menu);
