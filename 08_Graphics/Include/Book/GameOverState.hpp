@@ -23,6 +23,7 @@ class GameOverState : public State
 		sf::Text			mGameOverText;
 		sf::Time			mElapsedTime;
 		Player::PrevMission	mPrevMission;
+		bool				mPlayerFailed;
 };
 
 #endif // BOOK_GAMEOVERSTATE_HPP
