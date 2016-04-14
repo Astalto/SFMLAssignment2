@@ -27,6 +27,7 @@ Aircraft::Aircraft(Type type, const TextureHolder& textures, const FontHolder& f
 , mFireCountdown(sf::Time::Zero)
 , mIsFiring(false)
 , mIsLaunchingMissile(false)
+, mIsLaunchingLaser(false)
 , mShowExplosion(true)
 , mSpawnedPickup(false)
 , mFireRateLevel(1)

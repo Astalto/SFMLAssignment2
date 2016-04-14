@@ -17,9 +17,15 @@ GameOverState::GameOverState(StateStack& stack, Context context)
 
 	mGameOverText.setFont(font);
 	if (context.player->getMissionStatus() == Player::MissionFailure)
-		mGameOverText.setString("Mission failed!");	
+	{
+		mGameOverText.setString("Mission failed!");
+		mPlayerFailed = true;
+	}
 	else
+	{
 		mGameOverText.setString("Mission successful!");
+		mPlayerFailed = false;
+	}
 
 	mPrevMission = context.player->getPrevMission();
 
@@ -48,22 +54,30 @@ bool GameOverState::update(sf::Time dt)
 	mElapsedTime += dt;
 	if (mElapsedTime > sf::seconds(3))
 	{
-		switch (mPrevMission)
+		if (mPlayerFailed)
 		{
-		case Player::Mission1:
 			requestStateClear();
 			requestStackPush(States::Menu);
-			break;
-		case Player::Mission2:
-			requestStateClear();
-			requestStackPush(States::Menu);
-			break;
-		case Player::Mission3:
-			requestStateClear();
-			requestStackPush(States::Menu);
-		default:
-			requestStateClear();
-			requestStackPush(States::Menu);
+		}
+		else
+		{
+			switch (mPrevMission)
+			{
+			case Player::Mission1:
+				requestStateClear();
+				requestStackPush(States::MediumGame);
+				break;
+			case Player::Mission2:
+				requestStateClear();
+				requestStackPush(States::HardGame);
+				break;
+			case Player::Mission3:
+				requestStateClear();
+				requestStackPush(States::Menu);
+			default: // Fail-safe
+				requestStateClear();
+				requestStackPush(States::Menu);
+			}
 		}
 	}
 	return false;
