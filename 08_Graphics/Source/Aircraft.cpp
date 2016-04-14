@@ -32,11 +32,13 @@ Aircraft::Aircraft(Type type, const TextureHolder& textures, const FontHolder& f
 , mFireRateLevel(1)
 , mSpreadLevel(1)
 , mMissileAmmo(2)
+, mLaserAmmo(1)
 , mDropPickupCommand()
 , mTravelledDistance(0.f)
 , mDirectionIndex(0)
 , mHealthDisplay(nullptr)
 , mMissileDisplay(nullptr)
+, mLaserDisplay(nullptr)
 {
 	mExplosion.setFrameSize(sf::Vector2i(256, 256));
 	mExplosion.setNumFrames(16);
@@ -73,6 +75,14 @@ Aircraft::Aircraft(Type type, const TextureHolder& textures, const FontHolder& f
 		missileDisplay->setPosition(0, 70);
 		mMissileDisplay = missileDisplay.get();
 		attachChild(std::move(missileDisplay));
+	}
+
+	if (getCategory() == Category::PlayerAircraft)
+	{
+		std::unique_ptr<TextNode> laserDisplay(new TextNode(fonts, ""));
+		laserDisplay->setPosition(0, 90);
+		mLaserDisplay = laserDisplay.get();
+		attachChild(std::move(laserDisplay));
 	}
 
 	updateTexts();
@@ -318,7 +328,14 @@ void Aircraft::updateTexts()
 		if (mMissileAmmo == 0 || isDestroyed())
 			mMissileDisplay->setString("");
 		else
-			mMissileDisplay->setString("M: " + toString(mMissileAmmo));
+			mMissileDisplay->setString("Missiles: " + toString(mMissileAmmo));
+	}
+	if (mLaserDisplay)
+	{
+		if (mLaserAmmo == 0 || isDestroyed())
+			mLaserDisplay->setString("");
+		else
+			mLaserDisplay->setString("Lasers: " + toString(mLaserAmmo));
 	}
 }
 
