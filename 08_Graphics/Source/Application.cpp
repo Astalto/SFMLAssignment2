@@ -26,7 +26,7 @@ Application::Application()
 {
 	mWindow.setKeyRepeatEnabled(false);
 
-	mFonts.load(Fonts::Main, 	"Media/Sansation.ttf");
+	mFonts.load(Fonts::Main, 	"Media/Pixel LCD-7.ttf");
 
 	mTextures.load(Textures::TitleScreen,	"Media/Textures/TitleScreen.png");
 	mTextures.load(Textures::Buttons,		"Media/Textures/Buttons.png");

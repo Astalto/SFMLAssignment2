@@ -72,24 +72,41 @@ Aircraft::Aircraft(Type type, const TextureHolder& textures, const FontHolder& f
 		createPickup(node, textures);
 	};
 
-	std::unique_ptr<TextNode> healthDisplay(new TextNode(fonts, ""));
-	mHealthDisplay = healthDisplay.get();
-	attachChild(std::move(healthDisplay));
-
 	if (getCategory() == Category::PlayerAircraft)
 	{
+		// Player
+
+		// Health
+		std::unique_ptr<TextNode> healthDisplay(new TextNode(fonts, ""));
+		mHealthDisplay = healthDisplay.get();
+		mHealthDisplay->setColor(sf::Color::Blue);
+		mHealthDisplay->setStyle(sf::Text::Bold);
+		attachChild(std::move(healthDisplay));
+
+		// Missiles
 		std::unique_ptr<TextNode> missileDisplay(new TextNode(fonts, ""));
 		missileDisplay->setPosition(0, 70);
 		mMissileDisplay = missileDisplay.get();
+		mMissileDisplay->setColor(sf::Color::White);
 		attachChild(std::move(missileDisplay));
-	}
 
-	if (getCategory() == Category::PlayerAircraft)
-	{
+		// Lasers
 		std::unique_ptr<TextNode> laserDisplay(new TextNode(fonts, ""));
 		laserDisplay->setPosition(0, 90);
 		mLaserDisplay = laserDisplay.get();
+		mLaserDisplay->setColor(sf::Color::White);
 		attachChild(std::move(laserDisplay));
+	}
+	else
+	{
+		// Enemy
+
+		// Health
+		std::unique_ptr<TextNode> healthDisplay(new TextNode(fonts, ""));
+		mHealthDisplay = healthDisplay.get();
+		mHealthDisplay->setColor(sf::Color::Red);
+		mHealthDisplay->setStyle(sf::Text::Bold);
+		attachChild(std::move(healthDisplay));
 	}
 
 	updateTexts();
