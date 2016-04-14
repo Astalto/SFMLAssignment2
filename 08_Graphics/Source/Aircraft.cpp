@@ -59,6 +59,12 @@ Aircraft::Aircraft(Type type, const TextureHolder& textures, const FontHolder& f
 		createProjectile(node, Projectile::Missile, 0.f, 0.5f, textures);
 	};
 
+	mLaserCommand.category = Category::SceneAirLayer;
+	mLaserCommand.action   = [this, &textures] (SceneNode& node, sf::Time)
+	{
+		createProjectile(node, Projectile::Laser, 0.f, 0.5f, textures);
+	};
+
 	mDropPickupCommand.category = Category::SceneAirLayer;
 	mDropPickupCommand.action   = [this, &textures] (SceneNode& node, sf::Time)
 	{
