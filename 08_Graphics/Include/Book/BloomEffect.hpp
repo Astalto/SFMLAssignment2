@@ -39,6 +39,7 @@ class BloomEffect : public PostEffect
 		sf::RenderTexture	mBrightnessTexture;
 		RenderTextureArray	mFirstPassTextures;
 		RenderTextureArray	mSecondPassTextures;
+
 };
 
 #endif // BOOK_BLOOMEFFECT_HPP

@@ -16,7 +16,7 @@ MenuState::MenuState(StateStack& stack, Context context)
 
 	auto playLevelOne = std::make_shared<GUI::Button>(*context.fonts, *context.textures);
 	playLevelOne->setPosition(100, 300);
-	playLevelOne->setText("Play Level 1 (Easy)");
+	playLevelOne->setText("Play Level 1");
 	playLevelOne->setCallback([this] ()
 	{
 		requestStackPop();
@@ -25,7 +25,7 @@ MenuState::MenuState(StateStack& stack, Context context)
 
 	auto playLevelTwo = std::make_shared<GUI::Button>(*context.fonts, *context.textures);
 	playLevelTwo->setPosition(100, 350);
-	playLevelTwo->setText("Play Level 2 (Medium)");
+	playLevelTwo->setText("Play Level 2");
 	playLevelTwo->setCallback([this]()
 	{
 		requestStackPop();
@@ -34,7 +34,7 @@ MenuState::MenuState(StateStack& stack, Context context)
 
 	auto playLevelThree = std::make_shared<GUI::Button>(*context.fonts, *context.textures);
 	playLevelThree->setPosition(100, 400);
-	playLevelThree->setText("Play Level 3 (Hard)");
+	playLevelThree->setText("Play Level 3");
 	playLevelThree->setCallback([this]()
 	{
 		requestStackPop();
